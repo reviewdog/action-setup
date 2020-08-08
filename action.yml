@@ -1,0 +1,19 @@
+name: 'Setup reviewdog'
+description: 'This action sets up reviewdog'
+inputs:
+  reviewdog_version:
+    description: 'reviewdog version. [latest,nightly,vX.Y.Z]'
+    default: 'latest'
+runs:
+  using: 'composite'
+  steps:
+    - run: $GITHUB_ACTION_PATH/install.sh
+      shell: bash
+      env:
+        REVIEWDOG_VERSION: ${{ inputs.reviewdog_version }}
+        REVIEWDOG_TEMPDIR: ${{ runner.temp }}
+    - run: |
+        echo "::group::📖 reviewdog -h"
+        reviewdog -h 2>&1 || true
+        echo "::endgroup::"
+      shell: bash
