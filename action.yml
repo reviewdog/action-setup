@@ -17,3 +17,8 @@ runs:
         reviewdog -h 2>&1 || true
         echo "::endgroup::"
       shell: bash
+
+# Ref: https://haya14busa.github.io/github-action-brandings/
+branding:
+  icon: 'terminal'
+  color: 'gray-dark'
