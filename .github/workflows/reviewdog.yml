@@ -1,0 +1,76 @@
+name: reviewdog
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  shellcheck:
+    name: runner / shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: haya14busa/action-cond@v1
+        id: reporter
+        with:
+          cond: ${{ github.event_name == 'pull_request' }}
+          if_true: "github-pr-review"
+          if_false: "github-check"
+      - uses: reviewdog/action-shellcheck@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: ${{ steps.reporter.outputs.value }}
+          level: warning
+
+  test-shell:
+    name: runner / suggester / shell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install mvdan/sh
+        run: |
+          mkdir -p $HOME/bin
+          curl -sfL https://install.goreleaser.com/github.com/mvdan/sh.sh | sh -s -- -b $HOME/bin
+          echo ::add-path::$HOME/bin
+
+      - run: shfmt -i 2 -ci -w .
+      - name: suggester / shfmt
+        uses: reviewdog/action-suggester@master
+        with:
+          tool_name: shfmt
+
+      # Need to install latest shellcheck to use diff output format as of writing (2020/08/03).
+      - name: install shellcheck
+        run: |
+          scversion="latest"
+          wget -qO- "https://github.com/koalaman/shellcheck/releases/download/${scversion?}/shellcheck-${scversion?}.linux.x86_64.tar.xz" | tar -xJv
+          sudo cp "shellcheck-${scversion}/shellcheck" /usr/local/bin/
+          rm -rf "shellcheck-${scversion}/shellcheck"
+      - run: shellcheck -f diff $(shfmt -f .) | git apply
+      - name: suggester / shellcheck
+        uses: reviewdog/action-suggester@master
+        with:
+          tool_name: shellcheck
+
+  misspell:
+    name: runner / misspell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: reviewdog/action-misspell@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          level: warning
+          locale: "US"
+
+  alex:
+    name: runner / alex
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: reviewdog/action-alex@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          level: warning
