@@ -1,0 +1,30 @@
+name: Test
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install reviewdog (default)
+        uses: ./
+      - run: reviewdog -version
+
+      - name: install reviewdog (nightly)
+        uses: ./
+        with:
+          reviewdog_version: nightly
+      - run: reviewdog -version | grep nightly
+
+      - name: install reviewdog (with reviewdog_version)
+        uses: ./
+        with:
+          reviewdog_version: v0.10.0
+      - run: test "$(reviewdog -version)" = '0.10.0'
