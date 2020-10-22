@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir -p $HOME/bin
           curl -sfL https://install.goreleaser.com/github.com/mvdan/sh.sh | sh -s -- -b $HOME/bin
-          echo ::add-path::$HOME/bin
+          echo $HOME/bin >> $GITHUB_PATH
 
       - run: shfmt -i 2 -ci -w .
       - name: suggester / shfmt
