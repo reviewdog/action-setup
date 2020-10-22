@@ -23,4 +23,4 @@ echo '::group::🐶 Installing reviewdog ... https://github.com/reviewdog/review
 curl -sfL "${INSTALL_SCRIPT}" | sh -s -- -b "${TEMP}/reviewdog/bin" "${VERSION}" 2>&1
 echo '::endgroup::'
 
-echo "::add-path::${TEMP}/reviewdog/bin"
+echo "${TEMP}/reviewdog/bin" >>"${GITHUB_PATH}"
