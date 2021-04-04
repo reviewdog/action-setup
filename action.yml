@@ -1,5 +1,5 @@
 name: 'Setup reviewdog'
-description: 'This action sets up reviewdog'
+description: '🐶 This action sets up reviewdog'
 inputs:
   reviewdog_version:
     description: 'reviewdog version. [latest,nightly,vX.Y.Z]'
