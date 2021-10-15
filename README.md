@@ -22,24 +22,24 @@ inputs:
 ### Latest
 ```yaml
 steps:
-- uses: reviewdog/action-setup@v1
-- run: reviewdog -version
+  - uses: reviewdog/action-setup@v1
+  - run: reviewdog -version
 ```
 
 ### Specify reviewdog version
 ```yaml
 steps:
-- uses: reviewdog/action-setup@v1
-  with:
-    reviewdog_version: v0.13.0
-- run: reviewdog -version
+  - uses: reviewdog/action-setup@v1
+    with:
+      reviewdog_version: v0.13.0
+  - run: reviewdog -version
 ```
 
 ### Nightly
 ```yaml
 steps:
-- uses: reviewdog/action-setup@v1
-  with:
-    reviewdog_version: nightly
-- run: reviewdog -version
+  - uses: reviewdog/action-setup@v1
+    with:
+      reviewdog_version: nightly
+  - run: reviewdog -version
 ```
