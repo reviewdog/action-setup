@@ -14,7 +14,7 @@ runs:
         REVIEWDOG_TEMPDIR: ${{ runner.temp }}
     - run: |
         echo "::group::📖 reviewdog -h"
-        reviewdog -h 2>&1 || true
+        reviewdog -h 2>&1
         echo "::endgroup::"
       shell: bash
 
