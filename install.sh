@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 VERSION="${REVIEWDOG_VERSION:-latest}"
 
 TEMP="${REVIEWDOG_TEMPDIR}"
