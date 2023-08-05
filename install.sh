@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-set -euo pipefail
+set -eu
 
 VERSION="${REVIEWDOG_VERSION:-latest}"
 
@@ -14,7 +14,7 @@ if [ -z "${TEMP}" ]; then
 fi
 
 INSTALL_SCRIPT='https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh'
-if [ "${VERSION}" == 'nightly' ] ; then
+if [ "${VERSION}" = 'nightly' ] ; then
   INSTALL_SCRIPT='https://raw.githubusercontent.com/reviewdog/nightly/master/install.sh'
   VERSION='latest'
 fi
