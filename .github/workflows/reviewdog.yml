@@ -74,3 +74,14 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           level: warning
+
+  actionlint:
+    name: runner / actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: reviewdog/action-actionlint@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          level: warning
