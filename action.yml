@@ -7,19 +7,18 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: $GITHUB_ACTION_PATH/install.sh
+    - name: install reviewdog
+      run: |
+        set -eu
+        "$GITHUB_ACTION_PATH/install.sh"
       shell: sh
       env:
         REVIEWDOG_VERSION: ${{ inputs.reviewdog_version }}
         REVIEWDOG_TEMPDIR: ${{ runner.temp }}
-    - run: |
-        if ! command -v reviewdog >/dev/null 2>&1; then
-          echo "reviewdog was not installed"
-          exit 1
-        fi
-        echo "::group::📖 reviewdog -h"
-        reviewdog -h 2>&1 || true
-        echo "::endgroup::"
+    - name: check reviewdog is successfully installed
+      run: |
+        set -eu
+        "$GITHUB_ACTION_PATH/check-installed.sh"
       shell: sh
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
