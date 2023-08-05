@@ -28,3 +28,13 @@ jobs:
         with:
           reviewdog_version: v0.10.0
       - run: test "$(reviewdog -version)" = '0.10.0'
+
+  container:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install reviewdog
+        uses: ./
+      - run: reviewdog -version
