@@ -11,7 +11,7 @@ jobs:
         platform: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: install reviewdog (default)
         uses: ./
@@ -34,7 +34,7 @@ jobs:
     container:
       image: alpine:latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: install reviewdog
         uses: ./
       - run: reviewdog -version
