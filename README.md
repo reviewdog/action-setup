@@ -31,7 +31,7 @@ steps:
 steps:
   - uses: reviewdog/action-setup@v1
     with:
-      reviewdog_version: v0.14.2
+      reviewdog_version: v0.15.0
   - run: reviewdog -version
 ```
 
