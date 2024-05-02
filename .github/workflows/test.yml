@@ -26,8 +26,8 @@ jobs:
       - name: install reviewdog (with reviewdog_version)
         uses: ./
         with:
-          reviewdog_version: v0.10.0
-      - run: test "$(reviewdog -version)" = '0.10.0'
+          reviewdog_version: v0.17.4
+      - run: test "$(reviewdog -version)" = '0.17.4'
 
   container:
     runs-on: ubuntu-latest
