@@ -6,6 +6,7 @@
 [![release](https://github.com/reviewdog/action-setup/workflows/release/badge.svg)](https://github.com/reviewdog/action-setup/actions?query=workflow%3Arelease)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-setup?logo=github&sort=semver)](https://github.com/reviewdog/action-setup/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
+[![Used-by counter](https://img.shields.io/endpoint?url=https://haya14busa.github.io/github-used-by/data/reviewdog/action-setup/shieldsio.json)](https://github.com/haya14busa/github-used-by/tree/main/repo/reviewdog/action-setup)
 
 This action installs :dog: [reviewdog](https://github.com/reviewdog/reviewdog).
 
