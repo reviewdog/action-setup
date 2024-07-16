@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -eu
 
 if ! command -v reviewdog >/dev/null 2>&1; then
   echo "reviewdog was not installed"
