@@ -9,17 +9,15 @@ runs:
   steps:
     - name: install reviewdog
       run: |
-        set -eu
-        "$GITHUB_ACTION_PATH/install.sh"
-      shell: sh
+        bash "$GITHUB_ACTION_PATH/install.sh"
+      shell: bash
       env:
         REVIEWDOG_VERSION: ${{ inputs.reviewdog_version }}
         REVIEWDOG_TEMPDIR: ${{ runner.temp }}
     - name: check reviewdog is successfully installed
       run: |
-        set -eu
-        "$GITHUB_ACTION_PATH/check-installed.sh"
-      shell: sh
+        bash "$GITHUB_ACTION_PATH/check-installed.sh"
+      shell: bash
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
 branding:
