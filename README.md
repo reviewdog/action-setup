@@ -32,7 +32,7 @@ steps:
 steps:
   - uses: reviewdog/action-setup@v1
     with:
-      reviewdog_version: v0.20.2
+      reviewdog_version: v0.20.3
   - run: reviewdog -version
 ```
 
