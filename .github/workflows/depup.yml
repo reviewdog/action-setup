@@ -9,6 +9,10 @@ on:
 jobs:
   reviewdog:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Enable OIDC
+      pull-requests: write
+      contents: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: haya14busa/action-depup@94a1aaf4e4923064019214b48a43276218af7ad5 # v1.6.4
@@ -17,6 +21,11 @@ jobs:
           file: README.md
           version_name: reviewdog_version
           repo: reviewdog/reviewdog
+
+      # Configure signed commits
+      # https://www.chainguard.dev/unchained/keyless-git-commit-signing-with-gitsign-and-github-actions
+      # https://github.com/chainguard-dev/actions/commits/main/setup-gitsign
+      - uses: chainguard-dev/actions/setup-gitsign@141bf225e9c19c34304ee9d06e9be9c44a6d8765 # main branch as of 2024-12-27
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
