@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/binary-install/binstaller/main/schema/InstallSpec.json
+schema: v1
+repo: reviewdog/nightly
+name: reviewdog
+asset:
+  template: reviewdog_${VERSION}_${OS}_${ARCH}${EXT}
+  default_extension: .tar.gz
+  rules:
+  - when:
+      arch: amd64
+    arch: x86_64
+  - when:
+      os: darwin
+    os: Darwin
+  - when:
+      os: linux
+    os: Linux
+  - when:
+      os: windows
+    os: Windows
+checksums:
+  algorithm: sha256
+  template: checksums.txt
