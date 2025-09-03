@@ -23,14 +23,14 @@ inputs:
 ### Latest
 ```yaml
 steps:
-  - uses: reviewdog/action-setup@e04ffabe3898a0af8d0fb1af00c188831c4b5893 # v1.3.2
+  - uses: reviewdog/action-setup@d8edfce3dd5e1ec6978745e801f9c50b5ef80252 # v1.4.0
   - run: reviewdog -version
 ```
 
 ### Specify reviewdog version
 ```yaml
 steps:
-  - uses: reviewdog/action-setup@e04ffabe3898a0af8d0fb1af00c188831c4b5893 # v1.3.2
+  - uses: reviewdog/action-setup@d8edfce3dd5e1ec6978745e801f9c50b5ef80252 # v1.4.0
     with:
       reviewdog_version: v0.20.3
   - run: reviewdog -version
@@ -39,7 +39,7 @@ steps:
 ### Nightly
 ```yaml
 steps:
-  - uses: reviewdog/action-setup@e04ffabe3898a0af8d0fb1af00c188831c4b5893 # v1.3.2
+  - uses: reviewdog/action-setup@d8edfce3dd5e1ec6978745e801f9c50b5ef80252 # v1.4.0
     with:
       reviewdog_version: nightly
   - run: reviewdog -version
