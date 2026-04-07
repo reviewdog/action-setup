@@ -25,7 +25,7 @@ jobs:
       # Configure signed commits
       # https://www.chainguard.dev/unchained/keyless-git-commit-signing-with-gitsign-and-github-actions
       # https://github.com/chainguard-dev/actions/commits/main/setup-gitsign
-      - uses: chainguard-dev/actions/setup-gitsign@3e8a2a226fad9e1ecbf2d359b8a7697554a4ac6d # main branch as of 2024-12-27
+      - uses: chainguard-dev/actions/setup-gitsign@a0a960b6ef0a72502b0a8eba85b7f3c00c669505 # main branch as of 2024-12-27
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@84ae59a2cdc2258d6fa0732dd66352dddae2a412 # v7.0.9
