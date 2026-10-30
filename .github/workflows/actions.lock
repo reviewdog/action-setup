@@ -16,7 +16,7 @@ workflows:
     '.github/workflows/reviewdog.yml':
         - 'actions/checkout@v7.0.1'
         - 'haya14busa/action-cond@v1.2.1'
-        - 'reviewdog/action-actionlint@v1.76.1'
+        - 'reviewdog/action-actionlint@v1.81.1'
         - 'reviewdog/action-alex@v1.19.0'
         - 'reviewdog/action-misspell@v1.30.4'
         - 'reviewdog/action-shellcheck@v1.34.1'
@@ -54,9 +54,9 @@ dependencies:
         commit: 'sha1-5f6978faf089d4d20b00c7766989d076bb2fc7f1'
         owner_id: 18365890
         repo_id: 197176365
-    'reviewdog/action-actionlint@v1.76.1':
-        ref: 'v1.76.1'
-        commit: 'sha1-5be522b94290e249dba9f5daded2f7157733e3d2'
+    'reviewdog/action-actionlint@v1.81.1':
+        ref: 'v1.81.1'
+        commit: 'sha1-619a81ec64ff8c0211cd6146eb2b21e8f1d7f440'
         owner_id: 48765237
         repo_id: 385059686
     'reviewdog/action-alex@v1.19.0':
