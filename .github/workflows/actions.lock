@@ -5,7 +5,7 @@ version: 'v0.0.3'
 workflows:
     '.github/workflows/depup.yml':
         - 'actions/checkout@v7.0.1'
-        - 'chainguard-dev/actions@v1.5.10'
+        - 'chainguard-dev/actions@v1.7.2'
         - 'peter-evans/create-pull-request@v8.1.1'
         - 'reviewdog/action-depup@v1.6.5'
     '.github/workflows/release.yml':
@@ -29,9 +29,9 @@ dependencies:
         commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
         owner_id: 44036562
         repo_id: 197814629
-    'chainguard-dev/actions@v1.5.10':
-        ref: 'v1.5.10'
-        commit: 'sha1-3e8a2a226fad9e1ecbf2d359b8a7697554a4ac6d'
+    'chainguard-dev/actions@v1.7.2':
+        ref: 'v1.7.2'
+        commit: 'sha1-8f31e9482b447ff2c69eca944a09b4b31a4a85d0'
         owner_id: 87436699
         repo_id: 461955941
     'haya14busa/action-bumpr@v1.11.4':
