@@ -6,7 +6,7 @@ workflows:
     '.github/workflows/depup.yml':
         - 'actions/checkout@v7.0.1'
         - 'chainguard-dev/actions@v1.8.1'
-        - 'peter-evans/create-pull-request@v8.1.1'
+        - 'peter-evans/create-pull-request@v8.1.2'
         - 'reviewdog/action-depup@v1.6.5'
     '.github/workflows/release.yml':
         - 'actions/checkout@v7.0.1'
@@ -49,9 +49,9 @@ dependencies:
         commit: 'sha1-7d2c558640ea49e798d46539536190aff8c18715'
         owner_id: 3797062
         repo_id: 225328382
-    'peter-evans/create-pull-request@v8.1.1':
-        ref: 'v8.1.1'
-        commit: 'sha1-5f6978faf089d4d20b00c7766989d076bb2fc7f1'
+    'peter-evans/create-pull-request@v8.1.2':
+        ref: 'v8.1.2'
+        commit: 'sha1-15733dbdfeedb4f7fdb73d13c6f5ac83b710fab8'
         owner_id: 18365890
         repo_id: 197176365
     'reviewdog/action-actionlint@v1.83.0':
