@@ -7,7 +7,7 @@ workflows:
         - 'actions/checkout@v7.0.1'
         - 'chainguard-dev/actions@v1.8.1'
         - 'peter-evans/create-pull-request@v8.1.2'
-        - 'reviewdog/action-depup@v1.6.5'
+        - 'reviewdog/action-depup@v1.6.7'
     '.github/workflows/release.yml':
         - 'actions/checkout@v7.0.1'
         - 'haya14busa/action-bumpr@v1.11.4'
@@ -64,9 +64,9 @@ dependencies:
         commit: 'sha1-f39fd335ddb3b76d5595d5c452078903cf872e96'
         owner_id: 48765237
         repo_id: 277568797
-    'reviewdog/action-depup@v1.6.5':
-        ref: 'v1.6.5'
-        commit: 'sha1-99f7aecf3e4d06d5a3faf190dae5dc79ac530b5a'
+    'reviewdog/action-depup@v1.6.7':
+        ref: 'v1.6.7'
+        commit: 'sha1-a03fa2103b273193becba8cca43a992b9173f5dc'
         owner_id: 48765237
         repo_id: 234837904
     'reviewdog/action-misspell@v1.31.0':
